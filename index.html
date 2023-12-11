@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game JS</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+        #score{
+            font-size: 16px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        div{
+            font-size: 20px;
+            font-family: monospace;
+            text-align: center;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        canvas{
+            border: 2px solid #fff;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        button {
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        canvas {
+            position: relative;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 20%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+        #watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+   <div>Tetris Game</div>
+   <div id="instructions">
+    <h2>How to Play Tetris:</h2>
+    <p>Use the arrow keys to move and rotate the pieces. Try to complete full rows to score points. </p>
+</div>
+    <canvas id="tetris" width="250" height="500"></canvas>
+    <div>
+        Score  <div id="score">0</div>
+        
+        <button id="restartButton" onclick="restartGame()">Restart</button>
+    </div>
+    <div id="watermark">Glenn</div>
+    <script src="tetrominoes.js"></script>
+    <script src="tetris.js"></script>
+</body>
+</html>
